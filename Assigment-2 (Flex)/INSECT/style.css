@@ -134,3 +134,31 @@ button{
     margin-bottom: 10px;
 
 }
+.left-main{
+    position: absolute;
+    top: 25%;
+    left: 7%;
+    height: 400px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.text{
+    font-size: 20px;
+    font-family: sans-serif;
+
+}
+.text h1{
+    transform: rotate(270deg);
+}
+.point{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.point p{
+    font-family: sans-serif;
+    font-weight: 400;
+    padding-top: 10px;
+}
