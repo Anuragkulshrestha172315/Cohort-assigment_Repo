@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+main{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+nav{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+          padding: 30px 50px;
+      z-index: 99;
+
+}
+.img{
+    height: 400px;
+width: 400px;
+position: absolute;
+top: 20%;
+left: 37%;
+}
+.title h1{
+    font-size: 40px;
+      font-weight: 700;
+}
+.search input{
+    width: 300px;
+    padding: 14px 25px;
+    border-radius: 40px;
+    border: none;
+    background-color: #f0f0f0;
+    font-size: 16px;
+}
+.link{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.link a{
+    text-decoration: none;
+    margin-right: 40px;
+    color: #FEFEFE;
+}
+section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.left{
+    background-color: #FEFEFE;
+    height: 100%;
+    width: 50%;
+}
+.right{
+    background-color: #BD3D31;
+    height: 100%;
+    width: 50%;
+}
+.right-hero{
+    height: 600px;
+    width: 300px;
+    position: absolute;
+    top: 20%;
+    left: 66%;
+    padding: 10px 50px;
+}
+.hero-title{
+    font-size: 20px;
+    color: #FEFEFE;
+    font-family: sans-serif;
+    margin-bottom: 40px;
+}
+.l-border{
+
+    height: 80px;
+    border-left: 2px solid#FEFEFE ;
+    margin-right: 20px;
+}
+.icon{
+    font-size: 10px;
+    color: #FEFEFE;
+
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px;
+
+}
+.cc-img{
+    height: 100px;
+    width: 100px;
+}
+.para{
+    margin-bottom: 10px;
+    color: #FEFEFE;
+
+}
+.i{
+ color: #DABC92;
+ font-size: 20px;
+}
+.icon{
+    font-size: 10px;
+}
+button{
+    margin-top: 30px;
+
+    padding: 10px 30px;
+    background-color: #DABC92;
+    font-size: 15px;
+    font-weight: 100;
+    border-radius: 10px;
+    border: none;
+}
+.price{
+    font-family: sans-serif;
+    color: #DABC92;
+    font-weight: 300;
+    margin-bottom: 10px;
+
+}
