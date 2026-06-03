@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+main{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: linear-gradient(to right,#060606, #100D0E,#060606);
+} 
+header {
+    height: 80px;
+    width: 100%;
+}
+header h1{
+    display: flex;
+    color: #F3F0EF;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    margin-top: 20px;;
+    font-weight: 500;
+    font-size: 45px;
+}
+.hero-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    gap: 1px;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow:
+        0 0 3px rgba(255, 123, 0, 0.5),
+        0 0 3px rgba(255, 123, 0, 0.4),
+        0 0 3px rgba(255, 123, 0, 0.3);
+    
+}
+.card:hover{
+    box-shadow:
+        0 0 15px rgba(255, 123, 0, 0.8),
+        0 0 30px rgba(255, 123, 0, 0.6),
+        0 0 60px rgba(255, 123, 0, 0.4);
+}
+.second-hero{
+    height: 250px;
+    margin-left: 5%;
+    width: 1400px;
+    display: flex;
+    padding: 0px, 20px;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    box-shadow:
+        0 0 3px rgba(255, 123, 0, 0.5),
+        0 0 10px rgba(255, 123, 0, 0.4),
+        0 0 5px rgba(255, 123, 0, 0.3);
+}
+.food_img{
+    height: 220px;
+    width: 250px;
+}
+.leave_img{
+    height: 220px;
+    width: 250px;
+}
+.content{
+    height: 220px;
+    width: 450px;
+}
+footer{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.link{
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.price{
+    color: #C1640E;
+}
+.juice_name{
+    color: #F3F0EF;
+}
+.para{
+   color: #545454; 
+}
+.juice{
+     display: block;
+     margin: 0 auto;
+    height: 200px;
+    width: 200px2
+}
+.juice-btn{
+    padding: 3px 6px;
+    background-color: #060606;
+    border: 0.5px solid #C1640E;
+    color: #C1640E;
+    border-radius: 10px;
+}
