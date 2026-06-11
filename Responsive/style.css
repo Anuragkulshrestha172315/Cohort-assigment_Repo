@@ -2,16 +2,23 @@
     font-family: Reckless;
     src: url(/fonts/RecklessCondensedS-TRIAL-Book.woff);
 }
+@font-face {
+    font-family: Figtree;
+    src: url(/fonts/figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.woff2);
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+html,body{
+    width: 100%;
+    height: 100%;
+}
 main{
     width: 100%;
     min-height: 100%;
     background-color: #FBF9EB;
-    padding: 1vw;
 }
 nav{
     width: 100%;
@@ -20,11 +27,12 @@ nav{
     align-items: center;
     justify-content: space-between;
     font-family: Reckless;
-    padding: 0.3vw 1vw;
+    padding: 0.3rem 1rem;
     border-radius: 1vw;
-    position:static;
+    position:sticky;
     left: 0;
     top: 0;
+
 }
 .nav_left_part{
     display: flex;
@@ -36,7 +44,7 @@ nav{
 }
 .nav_right_part{
     display: flex;
-    gap: 2vw;
+    gap: 2rem;
     width: 33%;
     align-items: center;
     justify-content: end;
@@ -55,4 +63,40 @@ nav{
 }
 .nav_right_part .ri-briefcase-line{
     width: 2vw;
+}
+
+.section-1{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://www.twoleavestea.com/cdn/shop/files/AlpineBerry_mobile.webp?v=1774284087&width=1350.0);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 1rem;
+    padding: 2rem;
+    align-items:start;
+}
+.section-1 h1{
+    font-size: 4rem;
+    max-width: 18vw;
+    font-family: Reckless;
+    color: white;
+    font-weight: 300;
+} 
+.section-1 p{
+    font-size: 1rem;
+    font-family: Figtree;
+    max-width: 24vw;
+    color: white;
+    font-weight: 300;
+}
+.section-1 button{
+    padding: 0.5vw 3vw;
+    border: none;
+    background-color: #2A2857;
+    color: white;
+    border-radius: 1vw;
+    font-family: Figtree;
 }
