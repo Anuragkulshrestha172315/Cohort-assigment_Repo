@@ -22,12 +22,17 @@ nav{
     font-family: Reckless;
     padding: 0.3vw 1vw;
     border-radius: 1vw;
+    position:static;
+    left: 0;
+    top: 0;
 }
 .nav_left_part{
     display: flex;
     gap: 1rem;
-    font-size: 1rem;
     width: 33%;
+}
+.nav_left_part h3{
+    font-weight: 300;
 }
 .nav_right_part{
     display: flex;
@@ -44,4 +49,10 @@ nav{
 .nav_center_part img{
     width: 100%;
     object-fit: cover;
+}
+.nav_right_part h3{
+    font-weight: 300;
+}
+.nav_right_part .ri-briefcase-line{
+    width: 2vw;
 }
