@@ -23,7 +23,7 @@ main{
     flex-direction: column;
     gap: 20px;
 }
-.input{
+.inp{
     width: 40%;
     height: 15%;
     border: 2px solid #BF532B;
@@ -34,7 +34,7 @@ main{
     padding: 10px;
 
 }
-.input input{
+.inp input{
     height: 100%;
     padding: 10px;
     width: 80%;
@@ -45,7 +45,7 @@ main{
     color: white;
     
 }
-.input button{
+.inp button{
     padding: 3px 10px;
     border: 0.3px solid #BF532B;
     background-color:#50352E;
@@ -57,17 +57,22 @@ main{
 }
 
 .too-doo{
-    height: 20%;
+    height: 30%;
     width: 40%;
-    border-radius: 1rem;
-    padding: 10px;
-    border: 2px solid #BF532B;
     color: wheat;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .li{
+    height: 100%;
+    width: 100%;
+    border: 2px solid #BF532B;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 10px;
+    border-radius: 1rem;
 
 }
 
