@@ -5,9 +5,7 @@ const timer = document.querySelector(".timer");
 
 let time = 0;
 let interval;
-
-btn.addEventListener("click", () => {
-  let interval = setInterval(() => {
+const randomBox =()=>{
     time += 1;
     timer.innerHTML = time;
 
@@ -16,9 +14,17 @@ btn.addEventListener("click", () => {
 
     box.style.top = `${eY}%`;
     box.style.left = `${eX}%`;
+}
+
+btn.addEventListener("click", () => {
+    clearInterval(interval);
+    
+   interval = setInterval(() => {
+    randomBox()
+    
   }, 1000);
 
   setTimeout(() => {
-    clearInterval(interval);
+    clearInterval(interval)
   }, 10000);
 });
