@@ -25,10 +25,22 @@
         </nav>
         <section>
             <div class="left">
-                <div class="total"></div>
-                <div class="complete"></div>
-                <div class="pending"></div>
-                <div class="due"></div>
+                <div class="total">
+                    <h2>1</h2>
+                    <h1>Total Task</h1>
+                </div>
+                <div class="complete">
+                    <h2>1</h2>
+                    <h1>Complete Task</h1>
+                </div>
+                <div class="pending">
+                    <h2>1</h2>
+                    <h1>Pending Task</h1>
+                </div>
+                <div class="due">
+                    <h2>1</h2>
+                    <h1>Due Task</h1>
+                </div>
             </div>
             <div class="right">
                 <div class="create-section">
@@ -40,9 +52,11 @@
                 <div class="allTask">
                     <div class="task">
                         <input id="checkBox" type="checkbox">
+                        <div class="category"><p>DataScience</p></div>
                         <div class="title">
                             <h1>Anurag Kuslshretha</h1>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, magni?</p>
+                            <p> <i class="ri-calendar-line"></i>17/10/2005 </p>
                         </div>
                         <div class="btn">
                             <button id="view">View Task <i class="ri-arrow-down-s-line"></i></button>
@@ -54,6 +68,28 @@
                 
             </div>
         </section>
+
+        <form action="submit">
+            <div class="crosses">
+                <h1 id="cross">X</h1>
+            </div>
+
+            
+            <div class="form">
+                <div class="form_top">
+                <h1 >Task Information</h1>
+                
+                </div>
+               <div class="form_detail"> 
+                <input type="text" placeholder="Enter the field (DS, Web Dev etc..)">
+                <input type="text" placeholder="Enter the Task title">
+                <input type="text" placeholder="Enter the About task">
+                <input type="date">
+                <button>Create Task</button>
+               </div>
+            
+            </div>
+        </form>
     </main>
     <script src="./task.js"></script>
 </body>
