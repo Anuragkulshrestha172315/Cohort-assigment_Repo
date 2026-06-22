@@ -26,9 +26,8 @@ let ui=()=>{
                             <p> <i class="ri-calendar-line"></i>${elem.date}</p>
                         </div>
                         <div class="btn">
-                            <button id="view">View Task <i class="ri-arrow-down-s-line"></i></button>
-                            <button onclick = "updateTask('${elem.taskTitle}')" id="edit"><i class="ri-pencil-ai-2-line"></i></button>
-                            <button onclick = "deleteTask('${index}')"  id="delete"><i class="ri-delete-bin-5-line"></i></button>
+                            <button onclick = "updateTask('${elem.taskTitle}')" id="edit">Edit <i class="ri-pencil-ai-2-line"></i></button>
+                            <button onclick = "deleteTask('${index}')"  id="delete">Delete <i class="ri-delete-bin-5-line"></i></button>
                         </div>
                     </div>`
     })
