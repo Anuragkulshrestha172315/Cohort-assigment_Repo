@@ -7,6 +7,10 @@ const form = document.querySelector("form")
 const cross = document.querySelector(".crosses")
 const add = document.querySelector(".add")
 const taskDiv = document.querySelector(".allTask")
+const totalTask = document.querySelector(".total h2");
+const completeTask = document.querySelector(".complete h2");
+const pendingTask = document.querySelector(".pending h2");
+const dueTask = document.querySelector(".due h2");
 
 let taskArr = [];
 let updateindex = null
@@ -28,6 +32,7 @@ let ui=()=>{
                         </div>
                     </div>`
     })
+    updateState();
     
 }
 
@@ -94,4 +99,23 @@ const updateTask = (name) => {
 const deleteTask = (index)=>{
     taskArr.splice(index,1)
     ui()
+}
+
+
+const updateState = ()=>{
+    let total = taskArr.length;
+
+    let complete = taskArr.filter(task => task.complete).length
+    let pending = total - complete;
+    let today = new Date()
+
+    let due = taskArr.filter(task=>{
+        return !task.complete && new Date(task.Date) < today;
+    }).length;
+
+    totalTask.textContent = total;
+    completeTask.textContent = complete;
+    pendingTask.textContent = pending;
+    dueTask.textContent = due;
+
 }
