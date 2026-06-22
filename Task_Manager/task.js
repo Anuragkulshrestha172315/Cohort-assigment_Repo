@@ -18,7 +18,7 @@ let ui=()=>{
     taskDiv.innerHTML ="";
     taskArr.forEach((elem,index)=>{
         taskDiv.innerHTML += `<div class="task">
-                        <input id="checkBox" type="checkbox">
+                        <input id="checkBox" type="checkbox" ${elem.complete ? "checked" :""} onchange="toggleComplete(${index})">
                         <div class="category"><p>${elem.category}</p></div>
                         <div class="title">
                             <h1>${elem.taskTitle}</h1>
@@ -70,7 +70,8 @@ form.addEventListener('submit',(event)=>{
         category,
         taskTitle,
         aboutTask,
-        date
+        date,
+        complete : false
     }
     if(updateindex != null){
         taskArr[updateindex] = obj;
@@ -118,4 +119,9 @@ const updateState = ()=>{
     pendingTask.textContent = pending;
     dueTask.textContent = due;
 
+}
+
+const toggleComplete = (index) => {
+    taskArr[index].complete = !taskArr[index].complete;
+    ui();
 }
