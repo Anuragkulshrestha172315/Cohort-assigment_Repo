@@ -27,3 +27,25 @@ dark.addEventListener('click', ()=>{
     }
     main.classList.toggle('bright')
 })
+
+form.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    let category = event.target[0].value;
+    let taskTitle = event.target[1].value;
+    let aboutTask = event.target[2].value;
+    let date = event.target[4].value;
+
+    if(category.trim() ==="" || taskTitle.trim() === "" || aboutTask.trim() === "" || date.trim() === ""){
+        alert("Please Enter the all feild!")
+    }
+    
+    let obj = {
+        category,
+        taskTitle,
+        aboutTask,
+        date
+    }
+    console.log(obj);
+    
+
+})
