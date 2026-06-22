@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
     <link rel="stylesheet" href="./task.css">
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
 </head>
 <body>
     <main>
@@ -13,21 +17,41 @@
                 <h1>TASK_MANEGER</h1>
             </div>
             <div class="search">
-            <input type="text" placeholder="Search the Task...">
+                <input type="text" placeholder="Search the Task..." ><i class="ri-search-line"></i>
             </div>
             <div class="dark">
-                
+                <i class="ri-sun-line"></i>
             </div>           
         </nav>
         <section>
-            <div class="progress">
+            <div class="left">
                 <div class="total"></div>
                 <div class="complete"></div>
+                <div class="pending"></div>
                 <div class="due"></div>
             </div>
-            <div>
-                <div class="left"></div>
-                <div class="right"></div>
+            <div class="right">
+                <div class="create-section">
+                    <h1>All Tasks</h1>
+                    <div class="addtask">
+                        <button class="add">Create Task</button><i class="ri-add-large-line"></i>
+                    </div>
+                </div>
+                <div class="allTask">
+                    <div class="task">
+                        <input id="checkBox" type="checkbox">
+                        <div class="title">
+                            <h1>Anurag Kuslshretha</h1>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, magni?</p>
+                        </div>
+                        <div class="btn">
+                            <button id="view">View Task <i class="ri-arrow-down-s-line"></i></button>
+                            <button id="edit">Edit <i class="ri-pencil-ai-2-line"></i></button>
+                            <button id="delete">Delete <i class="ri-delete-bin-5-line"></i></button>
+                        </div>
+                     </div>
+                </div>
+                
             </div>
         </section>
     </main>
