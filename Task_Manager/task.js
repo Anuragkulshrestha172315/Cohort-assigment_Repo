@@ -11,12 +11,13 @@ const totalTask = document.querySelector(".total h2");
 const completeTask = document.querySelector(".complete h2");
 const pendingTask = document.querySelector(".pending h2");
 const dueTask = document.querySelector(".due h2");
+const input = document.querySelector(".search input");
 
 let taskArr = [];
 let updateindex = null
-let ui=()=>{
+let ui=(arr = taskArr)=>{
     taskDiv.innerHTML ="";
-    taskArr.forEach((elem,index)=>{
+    arr.forEach((elem,index)=>{
         taskDiv.innerHTML += `<div class="task">
                         <input id="checkBox" type="checkbox" ${elem.complete ? "checked" :""} onchange="toggleComplete(${index})">
                         <div class="category"><p>${elem.category}</p></div>
@@ -31,8 +32,7 @@ let ui=()=>{
                         </div>
                     </div>`
     })
-    updateState();
-    
+    updateState();    
 }
 
 add.addEventListener('click',()=>{
@@ -48,7 +48,10 @@ dark.addEventListener('click', ()=>{
     nav.classList.toggle('bright')
     left.classList.toggle('bright')
     if(right.classList.toggle('bright')){
+        right.style.color = "black"
         nav.style.color = "black"
+        right.style.backgroundColor = "white"
+        taskDiv.style.backgroundColor = "white"
     }
     main.classList.toggle('bright')
 })
@@ -124,3 +127,12 @@ const toggleComplete = (index) => {
     taskArr[index].complete = !taskArr[index].complete;
     ui();
 }
+
+input.addEventListener('input', () => {
+    const value = input.value.toLowerCase();
+    const filterTask = taskArr.filter(task =>
+        task.taskTitle.toLowerCase().includes(value)
+    );
+
+    ui(filterTask);
+});
