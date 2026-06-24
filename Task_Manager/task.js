@@ -50,8 +50,6 @@ dark.addEventListener('click', ()=>{
     if(right.classList.toggle('bright')){
         right.style.color = "black"
         nav.style.color = "black"
-        right.style.backgroundColor = "white"
-        taskDiv.style.backgroundColor = "white"
     }
     main.classList.toggle('bright')
 })
