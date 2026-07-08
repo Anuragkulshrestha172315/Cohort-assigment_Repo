@@ -271,6 +271,9 @@ td{
     border-radius:18px;
     padding:24px;
     color:#fff;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .header{
