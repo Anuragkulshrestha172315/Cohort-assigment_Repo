@@ -120,6 +120,79 @@
       </div>
     </div>
 
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Transaction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="modal">
+
+    <div class="header">
+        <h2>Add Transaction</h2>
+        <span class="close">&times;</span>
+    </div>
+
+    <form>
+
+        <div class="field">
+            <label>Type</label>
+            <select>
+                <option>Expense</option>
+                <option>Income</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Description</label>
+            <input
+                type="text"
+                placeholder="e.g Amazon, Salary, Coffee">
+        </div>
+
+        <div class="row">
+
+            <div class="field">
+                <label>Amount</label>
+                <input type="number">
+            </div>
+
+            <div class="field">
+                <label>Date</label>
+                <input type="date">
+            </div>
+
+        </div>
+
+        <div class="field">
+            <label>Category</label>
+
+            <select>
+                <option selected disabled>Select a category</option>
+                <option>Food & Dining</option>
+                <option>Shopping</option>
+                <option>Recharge & Bills</option>
+                <option>Petrol & Auto</option>
+                <option>Utilities</option>
+                <option>Salary</option>
+                <option>Entertainment</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <button>Add Transaction</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
+
     <script src="fin.js"></script>
   </body>
 </html>
