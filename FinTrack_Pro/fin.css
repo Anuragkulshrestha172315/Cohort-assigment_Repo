@@ -284,6 +284,7 @@ td {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  width:100%;
 }
 
 .header h2 {
