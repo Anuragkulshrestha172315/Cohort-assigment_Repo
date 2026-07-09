@@ -4,6 +4,7 @@ const cross = document.querySelector(".cross")
 const form = document.querySelector("form")
 const productDiv = document.querySelector(".Product")
 
+
 let productArr = [];
 let updateIndex = null;
 let ui = ()=>{
@@ -90,3 +91,4 @@ const deleteProducts = (index) => {
     productArr.splice(index,1);
     ui();
 }
+

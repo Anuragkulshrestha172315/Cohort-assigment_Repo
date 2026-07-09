@@ -4,6 +4,10 @@ const modal = document.querySelector(".modal")
 const close = document.querySelector(".close")
 const form = document.querySelector("form")
 const tran_data = document.querySelector(".data")
+const balance = document.querySelector(".balance");
+const income = document.querySelector(".income");
+const expense = document.querySelector(".expense");
+const transaction = document.querySelector(".transaction")
 
 let finTrack = [];
 
@@ -23,6 +27,8 @@ const transactionUi = () =>{
               </tr>
         `
     });
+    updateCards();
+
 }
 
 add_btn.addEventListener('click', ()=>{
@@ -63,7 +69,9 @@ form.addEventListener('submit',(event)=>{
     console.log(finTrack);
     form.reset()
     
-     transactionUi()
+    transactionUi()
+    modal.style.display = "none"
+
 })
 
 new Chart(ctx, {
@@ -86,3 +94,22 @@ new Chart(ctx, {
         maintainAspectRatio: false
     }
 });
+
+const updateCards = () => {
+
+    let totalIncome = 0;
+    let totalExpense = 0;
+
+    finTrack.forEach(item => {
+        if(item.type === "Income"){
+            totalIncome += Number(item.amount);
+        }else{
+            totalExpense += Number(item.amount);
+        }
+    });
+
+    if(balance) balance.textContent = `₹${totalIncome-totalExpense}.00`;
+    if(income) income.textContent = `₹${totalIncome}.00`;
+    if(expense) expense.textContent = `₹${totalExpense}.00`;
+    if(transaction) transaction.textContent = finTrack.length;
+}
