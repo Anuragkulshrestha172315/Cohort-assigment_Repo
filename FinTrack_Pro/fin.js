@@ -8,6 +8,7 @@ const balance = document.querySelector(".balance");
 const income = document.querySelector(".income");
 const expense = document.querySelector(".expense");
 const transaction = document.querySelector(".transaction")
+const resetAll = document.querySelector(".reset-btn")
 
 let finTrack = [];
 
@@ -30,7 +31,16 @@ const transactionUi = () =>{
     updateCards();
 
 }
+resetAll.addEventListener('click', ()=>{
+    finTrack = [];
 
+    transactionUi();
+    updateCards();
+
+    myChart.data.datasets[0].data = [0];
+    myChart.data.datasets[1].data = [0];
+    myChart.update();
+})
 add_btn.addEventListener('click', ()=>{
     modal.style.display = "flex"
 })
@@ -74,18 +84,18 @@ form.addEventListener('submit',(event)=>{
 
 })
 
-new Chart(ctx, {
+const myChart = new Chart(ctx, {
     type: "bar",
     data: {
         labels: ["Income vs Expenses"],
         datasets: [
             {
                 label: "Income",
-                data: [25000]
+                data: [0]
             },
             {
                 label: "Expenses",
-                data: [5000]
+                data: [0]
             }
         ]
     },
@@ -112,4 +122,9 @@ const updateCards = () => {
     if(income) income.textContent = `₹${totalIncome}.00`;
     if(expense) expense.textContent = `₹${totalExpense}.00`;
     if(transaction) transaction.textContent = finTrack.length;
+
+    myChart.data.datasets[0].data = [totalIncome];
+    myChart.data.datasets[1].data = [totalExpense];
+    myChart.update();
 }
+
