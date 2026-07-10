@@ -22,8 +22,8 @@ const transactionUi = () =>{
                 <td>${elem.category}</td>
                 <td class="green">${elem.amount}</td>
                 <td>
-                  <button class="edit">Edit</button>
-                  <button class="delete-btn">Delete</button>
+                  <button onclick = "editTransaction('${elem.discription}')"  class="edit">Edit</button>
+                  <button onclick = "deleteTransaction('${index}')" class="delete-btn">Delete</button>
                 </td>
               </tr>
         `
@@ -128,3 +128,19 @@ const updateCards = () => {
     myChart.update();
 }
 
+const editTransaction = (discription)=> {
+    modal.style.display = "flex"
+    let tran = finTrack.find((elem)=> elem.discription === discription)
+    updateIndex = finTrack.findIndex((elem)=> elem.discription === discription)
+
+    form[0].value = tran.type
+    form[1].value = tran.discription
+    form[2].value = tran.amount
+    form[3].value = tran.date
+    form[4].value = tran.category
+}
+
+const deleteTransaction  = (index) =>{
+    finTrack.splice(index,1)
+    transactionUi();
+}
