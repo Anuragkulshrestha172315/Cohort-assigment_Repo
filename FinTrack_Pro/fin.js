@@ -12,6 +12,7 @@ const resetAll = document.querySelector(".reset-btn")
 const input = document.querySelector(".input")
 
 let finTrack = [];
+let updateTransaction = null
 
 const transactionUi = (arr = finTrack) =>{
     tran_data.innerHTML = "",
@@ -23,8 +24,8 @@ const transactionUi = (arr = finTrack) =>{
                 <td>${elem.category}</td>
                 <td class="green">${elem.amount}</td>
                 <td>
-                  <button onclick = "editTransaction('${elem.id}')"  class="edit">Edit</button>
-                  <button onclick = "deleteTransaction('${index}')" class="delete-btn">Delete</button>
+                  <button onclick = "editTransaction(${elem.id})"  class="edit">Edit</button>
+                  <button onclick = "deleteTransaction(${elem.id})" class="delete-btn">Delete</button>
                 </td>
               </tr>
         `
@@ -70,17 +71,23 @@ form.addEventListener('submit',(event)=>{
     }
 
     let obj = {
-        type,
-        discription,
-        amount,
-        date,
-        category
+    id: Date.now(),
+    type,
+    discription,
+    amount,
+    date,
+    category
     }
-    finTrack.push(obj)
+    if(updateTransaction!=null){
+        finTrack[updateTransaction] = obj;
+        updateTransaction = null
+    }else{
+        finTrack.push(obj)
+    }
+    transactionUi();
     console.log(finTrack);
     form.reset()
     
-    transactionUi()
     modal.style.display = "none"
 
 })
@@ -128,17 +135,16 @@ const updateCards = () => {
     myChart.data.datasets[1].data = [totalExpense];
     myChart.update();
 }
-
-const editTransaction = (discription)=> {
-    modal.style.display = "flex"
-    let tran = finTrack.find((elem)=> elem.discription === discription)
-    updateIndex = finTrack.findIndex((elem)=> elem.discription === discription)
-
-    form[0].value = tran.type
-    form[1].value = tran.discription
-    form[2].value = tran.amount
-    form[3].value = tran.date
-    form[4].value = tran.category
+const editTransaction = (id) => {
+    modal.style.display = "flex";  
+    updateTransaction = finTrack.findIndex(item => item.id === id);
+    tran = finTrack.find(elem => elem.id === id);
+    tran = finTrack[updateTransaction];
+    form[0].value = tran.type;
+    form[1].value = tran.discription;
+    form[2].value = tran.amount;
+    form[3].value = tran.date;
+    form[4].value = tran.category;
 }
 
 const deleteTransaction  = (index) =>{
@@ -149,7 +155,7 @@ const deleteTransaction  = (index) =>{
 input.addEventListener('input',()=>{
     const value = input.value.toLowerCase();
     const filterTransaction = finTrack.filter(searchTransaction =>
-        searchTransaction.discription.toLowerCase().includes(value) || searchTransaction.category.toLowerCase().includes(value)
+        searchTransaction.discription.toLowerCase().includes(value) || searchTransaction.type.toLowerCase().includes(value)
     )
     transactionUi(filterTransaction)
 })
