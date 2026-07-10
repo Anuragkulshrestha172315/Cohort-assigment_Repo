@@ -9,12 +9,13 @@ const income = document.querySelector(".income");
 const expense = document.querySelector(".expense");
 const transaction = document.querySelector(".transaction")
 const resetAll = document.querySelector(".reset-btn")
+const input = document.querySelector(".input")
 
 let finTrack = [];
 
-const transactionUi = () =>{
+const transactionUi = (arr = finTrack) =>{
     tran_data.innerHTML = "",
-    finTrack.forEach((elem, index) => {
+    arr.forEach((elem, index) => {
         tran_data.innerHTML += `
         <tr>
                 <td>${elem.date}</td>
@@ -22,7 +23,7 @@ const transactionUi = () =>{
                 <td>${elem.category}</td>
                 <td class="green">${elem.amount}</td>
                 <td>
-                  <button onclick = "editTransaction('${elem.discription}')"  class="edit">Edit</button>
+                  <button onclick = "editTransaction('${elem.id}')"  class="edit">Edit</button>
                   <button onclick = "deleteTransaction('${index}')" class="delete-btn">Delete</button>
                 </td>
               </tr>
@@ -144,3 +145,11 @@ const deleteTransaction  = (index) =>{
     finTrack.splice(index,1)
     transactionUi();
 }
+
+input.addEventListener('input',()=>{
+    const value = input.value.toLowerCase();
+    const filterTransaction = finTrack.filter(searchTransaction =>
+        searchTransaction.discription.toLowerCase().includes(value) || searchTransaction.category.toLowerCase().includes(value)
+    )
+    transactionUi(filterTransaction)
+})

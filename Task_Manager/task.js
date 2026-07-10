@@ -102,7 +102,6 @@ const deleteTask = (index)=>{
     ui()
 }
 
-
 const updateState = ()=>{
     let total = taskArr.length;
 
