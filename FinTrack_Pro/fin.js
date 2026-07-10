@@ -10,6 +10,7 @@ const expense = document.querySelector(".expense");
 const transaction = document.querySelector(".transaction")
 const resetAll = document.querySelector(".reset-btn")
 const input = document.querySelector(".input")
+const themeBtn = document.querySelector(".theme-btn");
 
 let finTrack = [];
 let updateTransaction = null
@@ -33,6 +34,16 @@ const transactionUi = (arr = finTrack) =>{
     updateCards();
 
 }
+themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+
+    if (document.body.classList.contains("light")) {
+        themeBtn.innerHTML = "☀️";
+    } else {
+        themeBtn.innerHTML = "🌙";
+    }
+});
+
 resetAll.addEventListener('click', ()=>{
     finTrack = [];
 
@@ -43,6 +54,7 @@ resetAll.addEventListener('click', ()=>{
     myChart.data.datasets[1].data = [0];
     myChart.update();
 })
+
 add_btn.addEventListener('click', ()=>{
     modal.style.display = "flex"
 })

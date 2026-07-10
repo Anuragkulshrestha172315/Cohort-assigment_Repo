@@ -363,3 +363,71 @@ form button {
 form button:hover {
   background: #1d4ed8;
 }
+
+
+
+body.light{
+    background:#f3f4f6;
+    color:#111827;
+}
+
+body.light .sidebar,
+body.light .card,
+body.light .chart-box,
+body.light .preference-box,
+body.light .transaction-box,
+body.light .modal{
+    background:#ffffff;
+    color:#111827;
+    border:1px solid #d1d5db;
+}
+
+body.light .topbar{
+    border-bottom:1px solid #d1d5db;
+}
+
+body.light .logo p,
+body.light .heading p,
+body.light th{
+    color:#6b7280;
+}
+
+body.light table td{
+    color:#111827;
+}
+
+body.light input,
+body.light select{
+    background:#ffffff;
+    color:#111827;
+    border:1px solid #d1d5db;
+}
+
+body.light input::placeholder{
+    color:#6b7280;
+}
+
+body.light .chart-container{
+    background:#f8fafc;
+}
+
+body.light .menu button{
+    background:#e5e7eb;
+    color:#111827;
+}
+
+body.light .reset-btn{
+    background:#fee2e2;
+}
+
+.theme-btn{
+    width:50px;
+    height:28px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:18px;
+    background:gray;
+    color:white;
+    
+}
