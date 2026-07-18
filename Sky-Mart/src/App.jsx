@@ -3,7 +3,11 @@ import React from 'react'
 const App = () => {
   return (
     <div>
-      <h1>Sky_Mart</h1>
+      <div>
+        <nav>
+          <div>home</div>
+        </nav>
+      </div>
     </div>
   )
 }
