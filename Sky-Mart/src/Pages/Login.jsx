@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Eye, EyeOff, Mail, Lock, Zap, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router";
 
-export default function SkyMartSignIn() {
+const Login = ()=> {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  let navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -117,12 +120,13 @@ export default function SkyMartSignIn() {
 
           <p className="text-center text-neutral-500 text-sm mt-6">
             Don't have an account?{" "}
-            <a href="#" className="text-lime-400 font-semibold hover:underline">
+            <button onClick={()=>navigate('/register')} href="#" className="text-lime-400 font-semibold hover:underline">             
               Create one
-            </a>
+            </button>
           </p>
         </div>
       </div>
     </div>
   );
 }
+export default Login
