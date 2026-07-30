@@ -3,15 +3,8 @@ import { Eye, EyeOff, Mail, Lock, Zap, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router";
 
 const Login = ()=> {
-  const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+ 
   let navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col lg:flex-row">
@@ -77,9 +70,7 @@ const Login = ()=> {
               <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-neutral-500" />
               <input
                 type="email"
-                required
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email address"
                 className="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-4 pl-11 pr-4 text-sm text-white placeholder-neutral-500 outline-none focus:border-lime-400 transition-colors"
               />
@@ -89,15 +80,11 @@ const Login = ()=> {
               <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-neutral-500" />
               <input
                 type={showPassword ? "text" : "password"}
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 className="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-4 pl-11 pr-11 text-sm text-white placeholder-neutral-500 outline-none focus:border-lime-400 transition-colors"
               />
               <button
                 type="button"
-                onClick={() => setShowPassword((v) => !v)}
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-neutral-300 transition-colors"
                 aria-label="Toggle password visibility"
               >
