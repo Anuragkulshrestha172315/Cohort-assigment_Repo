@@ -65,12 +65,11 @@ const Login = ()=> {
             Enter your credentials to continue
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form className="space-y-4">
             <div className="relative">
               <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-neutral-500" />
               <input
                 type="email"
-                value={email}
                 placeholder="Email address"
                 className="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-4 pl-11 pr-4 text-sm text-white placeholder-neutral-500 outline-none focus:border-lime-400 transition-colors"
               />
@@ -79,7 +78,7 @@ const Login = ()=> {
             <div className="relative">
               <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-neutral-500" />
               <input
-                type={showPassword ? "text" : "password"}
+                type="password"
                 placeholder="Password"
                 className="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-4 pl-11 pr-11 text-sm text-white placeholder-neutral-500 outline-none focus:border-lime-400 transition-colors"
               />
@@ -88,11 +87,7 @@ const Login = ()=> {
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-neutral-300 transition-colors"
                 aria-label="Toggle password visibility"
               >
-                {showPassword ? (
-                  <EyeOff className="w-[18px] h-[18px]" />
-                ) : (
-                  <Eye className="w-[18px] h-[18px]" />
-                )}
+          
               </button>
             </div>
 
