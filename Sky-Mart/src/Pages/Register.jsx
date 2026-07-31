@@ -1,17 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { User, Mail, Lock, Eye, EyeOff, Zap, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
+import { Auth } from "../Context/AuthContext";
 
 const Register = () => {
+  let { registerUser, setRegisterUser} = useContext(Auth)
   let {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm(); 
 
-  let formSubmit = (data) => {};
+  let formSubmit = (data) => {
+    let arr = [...registerUser, data]
+    setRegisterUser(arr)
+    localStorage.setItem('registerUser', JSON.stringify(arr))
+    reset()
+  };
 
   let navigate = useNavigate();
 
