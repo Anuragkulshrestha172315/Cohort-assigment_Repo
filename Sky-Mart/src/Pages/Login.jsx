@@ -23,7 +23,7 @@ const Login = ()=> {
         return
       }
       setLogin(user)
-      navigate('/mainlayout')
+      navigate('/main')
       localStorage.setItem("loginUser",JSON.stringify(user))
 
     };
