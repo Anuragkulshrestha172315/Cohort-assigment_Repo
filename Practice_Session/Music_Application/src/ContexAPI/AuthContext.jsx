@@ -26,8 +26,34 @@ export const AuthContextData = createContext();
             
         }
 
+        const loginUser = (email, password) => {
+            const users = JSON.parse(localStorage.getItem('users') || "[]");
+
+            const alreadyExist = users.find((user)=>{
+                return user.email === email && user.password === password
+            })
+
+            if(alreadyExist){
+                
+                    localStorage.setItem("currentUser", JSON.stringify(alreadyExist));
+                    return {
+                        success : true,
+                        message : "Login Successfully",
+                        user : alreadyExist
+
+                    }
+                
+            }else{
+                return{
+                    success : false,
+                    message: "Invalid Credential"
+                }    
+            }
+
+        }
+
     return (
-    <AuthContextData.Provider value={registerUser}>
+    <AuthContextData.Provider value={{registerUser, loginUser}}>
         {children}
     </AuthContextData.Provider>
    

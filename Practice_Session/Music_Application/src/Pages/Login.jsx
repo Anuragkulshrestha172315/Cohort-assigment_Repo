@@ -1,15 +1,29 @@
 import { Mail, Lock, Eye, ArrowRight } from "lucide-react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { data, useNavigate } from "react-router";
+import { AuthContextData } from "../ContexAPI/AuthContext";
 
 const Login = () => {
-  let navigate = useNavigate();
+
+    let navigate = useNavigate();
+
     let {register, handleSubmit, formState:{errors}, reset}= useForm()
+
+    const {loginUser} = useContext(AuthContextData)
 
     let loginFormSubmit = (data) =>{
         console.log(data);
-        reset()
+        const result = loginUser(data.email, data.password);
+
+        console.log(result);
+    
+        if(result.success){
+        reset();
+        navigate("/main");
     }
+    }
+   
   return (
     <div className="min-h-screen w-full bg-black flex items-center justify-center p-6">
       <div className="w-full max-w-md bg-neutral-900/60 border border-neutral-800 rounded-2xl p-8">

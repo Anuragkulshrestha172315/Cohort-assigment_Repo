@@ -18,7 +18,7 @@ import { AuthContextData } from "../ContexAPI/AuthContext";
 
 const Register = () => {
 
-    const registerUser = useContext(AuthContextData)
+    const {registerUser} = useContext(AuthContextData)
 
   const [role, setRole] = useState("listener");
   let navigate = useNavigate();
@@ -35,8 +35,13 @@ const Register = () => {
       ...data,
       role
     };
-    registerUser(newUser)
-    reset();
+    const result = registerUser(newUser)
+    console.log(result);
+
+    if(result.success){
+        reset();
+        navigate("/")
+    }
   };
 
   return (
