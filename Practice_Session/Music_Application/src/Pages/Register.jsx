@@ -11,10 +11,33 @@ import {
   Radio,
   Tv,
 } from "lucide-react";
+import { useContext, useState } from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { AuthContextData } from "../ContexAPI/AuthContext";
 
 const Register = () => {
+
+    const registerUser = useContext(AuthContextData)
+
+  const [role, setRole] = useState("listener");
   let navigate = useNavigate();
+
+  let {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const formSubmit = (data) => {
+    const newUser = {
+      ...data,
+      role: role,
+    };
+    registerUser(newUser)
+    reset();
+  };
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-neutral-950 via-black to-neutral-950 flex flex-col items-center justify-center p-6 border-t-2 border-violet-700">
@@ -27,20 +50,30 @@ const Register = () => {
       </p>
 
       {/* Card */}
-      <form>
+      <form onSubmit={handleSubmit(formSubmit)}>
         <div className="w-full max-w-md bg-neutral-900/70 border border-neutral-800 rounded-2xl p-6">
           {/* Role toggle */}
           <div className="grid grid-cols-2 gap-3">
             <button
+              onClick={() => setRole("listener")}
               type="button"
-              className="flex flex-col items-center justify-center gap-2 py-4 rounded-xl border border-violet-500 bg-violet-950/40 text-violet-300"
+              className={`flex flex-col items-center justify-center gap-2 py-4 rounded-xl border ${
+                role === "listener"
+                  ? "border-violet-500 bg-violet-950/40 text-violet-300"
+                  : "border-neutral-700 bg-neutral-900 text-neutral-400"
+              }`}
             >
               <Music className="w-4 h-4" />
               <span className="text-[10px] tracking-widest">LISTENER</span>
             </button>
             <button
+              onClick={() => setRole("artist")}
               type="button"
-              className="flex flex-col items-center justify-center gap-2 py-4 rounded-xl border border-neutral-700 bg-neutral-900 text-neutral-400 hover:bg-neutral-800"
+              className={`flex flex-col items-center justify-center gap-2 py-4 rounded-xl border ${
+                role === "artist"
+                  ? "border-violet-500 bg-violet-950/40 text-violet-300"
+                  : "border-neutral-700 bg-neutral-900 text-neutral-400"
+              }`}
             >
               <Mic2 className="w-4 h-4" />
               <span className="text-[10px] tracking-widest">ARTIST</span>
@@ -51,6 +84,7 @@ const Register = () => {
           <div className="mt-5 flex items-center gap-3 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-3">
             <User className="w-4 h-4 text-neutral-500" />
             <input
+              {...register("fullName")}
               type="text"
               placeholder="Full Name"
               className="bg-transparent outline-none text-sm text-neutral-200 placeholder-neutral-500 w-full"
@@ -61,6 +95,7 @@ const Register = () => {
           <div className="mt-3 flex items-center gap-3 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-3">
             <AtSign className="w-4 h-4 text-neutral-500" />
             <input
+              {...register("userName")}
               type="text"
               placeholder="Username"
               className="bg-transparent outline-none text-sm text-neutral-200 placeholder-neutral-500 w-full"
@@ -71,6 +106,7 @@ const Register = () => {
           <div className="mt-3 flex items-center gap-3 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-3">
             <Mail className="w-4 h-4 text-neutral-500" />
             <input
+              {...register("email")}
               type="email"
               placeholder="Email Address"
               className="bg-transparent outline-none text-sm text-neutral-200 placeholder-neutral-500 w-full"
@@ -82,6 +118,7 @@ const Register = () => {
             <div className="flex items-center gap-2 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-3">
               <Lock className="w-4 h-4 text-neutral-500" />
               <input
+                {...register("password")}
                 type="password"
                 placeholder="Password"
                 className="bg-transparent outline-none text-sm text-neutral-200 placeholder-neutral-500 w-full min-w-0"
@@ -90,6 +127,7 @@ const Register = () => {
             <div className="flex items-center gap-2 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-3">
               <RotateCcw className="w-4 h-4 text-neutral-500" />
               <input
+                {...register("confirmPassword")}
                 type="password"
                 placeholder="Confirm"
                 className="bg-transparent outline-none text-sm text-neutral-200 placeholder-neutral-500 w-full min-w-0"
@@ -111,7 +149,7 @@ const Register = () => {
 
           {/* Register button */}
           <button
-            type="button"
+            type="submit"
             className="mt-5 w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition"
           >
             Register <ArrowRight className="w-4 h-4" />

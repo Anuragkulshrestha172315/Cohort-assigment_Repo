@@ -1,9 +1,15 @@
 import { Mail, Lock, Eye, ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router";
+import { useForm } from "react-hook-form";
+import { data, useNavigate } from "react-router";
 
 const Login = () => {
   let navigate = useNavigate();
+    let {register, handleSubmit, formState:{errors}, reset}= useForm()
 
+    let loginFormSubmit = (data) =>{
+        console.log(data);
+        reset()
+    }
   return (
     <div className="min-h-screen w-full bg-black flex items-center justify-center p-6">
       <div className="w-full max-w-md bg-neutral-900/60 border border-neutral-800 rounded-2xl p-8">
@@ -12,7 +18,7 @@ const Login = () => {
         <p className="text-neutral-400 text-sm mt-1">
           Sign in to continue your journey.
         </p>
-        <form>
+        <form onSubmit={handleSubmit(loginFormSubmit)}>
           {/* Email */}
 
           <div className="mt-6">
@@ -22,6 +28,7 @@ const Login = () => {
             <div className="mt-2 flex items-center gap-3 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-3">
               <Mail className="w-4 h-4 text-neutral-500" />
               <input
+              {...register('email')}
                 type="email"
                 placeholder="name@example.com"
                 className="bg-transparent outline-none text-sm text-neutral-200 placeholder-neutral-500 w-full"
@@ -45,6 +52,7 @@ const Login = () => {
             <div className="mt-2 flex items-center gap-3 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-3">
               <Lock className="w-4 h-4 text-neutral-500" />
               <input
+              {...register('password')}
                 type="password"
                 placeholder="••••••••"
                 className="bg-transparent outline-none text-sm text-neutral-200 placeholder-neutral-500 w-full"
@@ -67,7 +75,7 @@ const Login = () => {
 
           {/* Login button */}
           <button
-            type="button"
+            type="submit"
             className="mt-6 w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition"
           >
             Login <ArrowRight className="w-4 h-4" />
