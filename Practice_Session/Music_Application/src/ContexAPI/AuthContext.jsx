@@ -12,7 +12,7 @@ export const AuthContextData = createContext();
             })
             if(alreadyExist){
                 return {
-                    success : false,
+                    success : false, 
                     message: "user already exist"
                 }
             }

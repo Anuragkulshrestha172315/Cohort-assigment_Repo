@@ -33,7 +33,7 @@ const Register = () => {
   const formSubmit = (data) => {
     const newUser = {
       ...data,
-      role: role,
+      role
     };
     registerUser(newUser)
     reset();
