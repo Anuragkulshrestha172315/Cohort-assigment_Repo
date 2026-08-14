@@ -54,7 +54,7 @@ const Login = ()=> {
               <span className="block text-lime-400">Today.</span>
             </h1>
             <p className="mt-5 sm:mt-6 text-neutral-400 text-sm sm:text-base leading-relaxed max-w-md">
-              Thousands of products, lightning-fast delivery, and prices that
+              Thousands of products, lightningfast delivery, and prices that
               make your wallet happy.
             </p>
 
@@ -110,7 +110,7 @@ const Login = ()=> {
                 required: "Password is required",
                 minLength: {
                   value: 6,
-                  message: "At Least 6 characters ",
+                  message: "At Least 6 characters   ",
                 },
               })}
                 type="password"
