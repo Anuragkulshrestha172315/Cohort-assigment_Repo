@@ -54,7 +54,7 @@ const Login = ()=> {
               <span className="block text-lime-400">Today.</span>
             </h1>
             <p className="mt-5 sm:mt-6 text-neutral-400 text-sm sm:text-base leading-relaxed max-w-md">
-              Thousands of products,,  lightnin deliry, and prices that
+              Thousands of products,,  lightnin delry, and ices that
               make your wallet happy.
             </p>
 
