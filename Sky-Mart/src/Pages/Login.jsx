@@ -47,7 +47,7 @@ const Login = ()=> {
 
           <div className="max-w-lg mt-20 lg:mt-0">
             <p className="text-lime-400 text-xs sm:text-sm font-semibold tracking-[0.2em] mb-4 sm:mb-5">
-              WELCOME BA
+              WELCOME Back
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1]">
               Shop the future.
