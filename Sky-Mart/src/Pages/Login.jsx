@@ -51,7 +51,7 @@ const Login = ()=> {
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1]">
               Shop the future.
-              <span className="block text-lime-400">Today.</span>
+              <span className="block text-lime-400">TODAY.</span>
             </h1>
             <p className="mt-5 sm:mt-6 text-neutral-400 text-sm sm:text-base leading-relaxed max-w-md">
               Thousands of products,,  lightnin delry, and cthat
