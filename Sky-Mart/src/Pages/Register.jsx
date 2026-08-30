@@ -38,7 +38,7 @@ const Register = () => {
           Create account
         </h2>
         <p className="text-neutral-500 text-sm mb-8">
-          Join SkyMart and start Shopping
+          Join SkyMart and start Sopling
         </p>
 
         <form onSubmit={handleSubmit(formSubmit)} className="space-y-4">
